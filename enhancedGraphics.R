@@ -1,36 +1,33 @@
 ## Functions for enhancedGraphics app with RCy3
 
-# -----------------------------------------------------------------------------
-# enhanceGraphics piechart
-# -----------------------------------------------------------------------------
-# Prepares syntax for enhancedGraphics pie charts.
-# 
-# columns: List of column names
-# colors: Columns-matched list of pairs of colors to associate with minimum and
-#         maximum values per column. Up to 4 brewer palette color pairs are 
-#         used by default.
-# range: List of two values: global minimum and maximum to be used for color 
-#         gradients. Min and max across all columns are used by default.
-# portions: Columns-matched list of values to define pie slices. Pie is divided
-#           into equal slices by default.
-# arcstart: Position to start pie slices. 0 is 9 o'clock position. Default is
-#           90 or 6 o'clock position.
-# scale: Size of graphic relative to node. Default is 1.0.
-# position: Position of graphic relative to node. Default is center.
-# showlabels: Display labels on pie slices. Default is FALSE.
-# labellist: Columns-matched list of labels for slices. Default is column names.
-# labelsize: Font size for pie slice labels. Default is 12.
-# nodelist: Which nodes to apply enhanded Graphics. Default is all nodes by SUID. 
-#           If a list is provided, then it match node names. If a string prefixed
-#           with "column:" is provided, then it will match non-null values for 
-#           that column name.
-# newcolumn: Name of column to add enhancedGraphics syntax for style mapping.
-# style: Name of style to add mapping to. Default is "default". 
-# network: Name or SUID of network to apply enhancedGraphics.
-# base.url: Ignore unless you need to specify a custom domain, port or version
-#           of CyREST.
-# 
-# example usage: 
+#' EnhanceGraphics Pie Chart
+#'
+#' @description Prepares syntax for enhancedGraphics pie charts.
+#' @param columns List of column names
+#' @param colors Columns-matched list of pairs of colors to associate with minimum and
+#' maximum values per column. Up to 4 brewer palette color pairs are 
+#' used by default.
+#' @param range List of two values: global minimum and maximum to be used for color 
+#' gradients. Min and max across all columns are used by default.
+#' @param portions: Columns-matched list of values to define pie slices. Pie is divided
+#' into equal slices by default.
+#' @param arcstart: Position to start pie slices. 0 is 9 o'clock position. Default is
+#' 90 or 6 o'clock position.
+#' @param scale: Size of graphic relative to node. Default is 1.0.
+#' @param position: Position of graphic relative to node. Default is center.
+#' @param showlabels: Display labels on pie slices. Default is FALSE.
+#' @param labellist: Columns-matched list of labels for slices. Default is column names.
+#' @param labelsize: Font size for pie slice labels. Default is 12.
+#' @param nodelist: Which nodes to apply enhanded Graphics. Default is all nodes by SUID. 
+#' If a list is provided, then it match node names. If a string prefixed
+#' with "column:" is provided, then it will match non-null values for 
+#' that column name.
+#' @param newcolumn: Name of column to add enhancedGraphics syntax for style mapping.
+#' @param style: Name of style to add mapping to. Default is "default". 
+#' @param network: Name or SUID of network to apply enhancedGraphics.
+#' @param base.url: Ignore unless you need to specify a custom domain, port or version
+#' of CyREST.
+#' @examples
 #   egPie(c("HEKScore","JurkatScore"), range=c(0,1))
 #   egPie(c("HEKScore","JurkatScore"), range=c(0,1), nodelist="column:UniProt", style="AP-MS Style")
 #   egPie(c("HEKScore","JurkatScore"), c("white", "blue", "white", "purple"), range=c(0,1), nodelist="column:UniProt", style="AP-MS Style")
